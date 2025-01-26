@@ -46,7 +46,7 @@ public class RequestForACardTest {
         driver.findElement(By.cssSelector("button.button")).click();
         var actualElement = driver.findElement(By.cssSelector("[data-test-id=order-success]"));
         var actualText = actualElement.getText().trim();
-        assertEquals("Ваша заявка принята! В данный момент она находится на рассмотрении. Менеджер нашего банка свяжется с Вами в указанное Вами время.", actualText);
+        assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", actualText);
         assertTrue(actualElement.isDisplayed());
     }
 
@@ -56,7 +56,7 @@ public class RequestForACardTest {
         driver.findElement(By.cssSelector("button.button")).click();
         var actualElement = driver.findElement(By.cssSelector("[data-test-id=name].input_invalid .input__sub"));
         var actualText = actualElement.getText().trim();
-        assertEquals("Данное поле обязательно для заполнения", actualText);
+        assertEquals("Поле обязательно для заполнения", actualText);
         assertTrue(actualElement.isDisplayed());
     }
 
@@ -69,7 +69,7 @@ public class RequestForACardTest {
         driver.findElement(By.cssSelector("button.button")).click();
         var actualElement = driver.findElement(By.cssSelector("[data-test-id=name].input_invalid .input__sub"));
         var actualText = actualElement.getText().trim();
-        assertEquals("В поле имя и фамилия допускаются только кирилические буквы и пробелы", actualText);
+        assertEquals("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы.", actualText);
         assertTrue(actualElement.isDisplayed());
     }
 
@@ -82,7 +82,7 @@ public class RequestForACardTest {
         driver.findElement(By.cssSelector("button.button")).click();
         var actualElement = driver.findElement(By.cssSelector("[data-test-id=phone].input_invalid .input__sub"));
         var actualText = actualElement.getText().trim();
-        assertEquals("Номер телефона указан не корректно. В поле телефон для обратной связи допускается не более 11 цифровых символов", actualText);
+        assertEquals("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.", actualText);
         assertTrue(actualElement.isDisplayed());
     }
 
@@ -94,7 +94,7 @@ public class RequestForACardTest {
         driver.findElement(By.cssSelector("button.button")).click();
         var actualElement = driver.findElement(By.cssSelector("[data-test-id=name].input_invalid .input__sub"));
         var actualText = actualElement.getText().trim();
-        assertEquals("Данное поле не может быть пустым", actualText);
+        assertEquals("Поле обязательно для заполнения", actualText);
         assertTrue(actualElement.isDisplayed());
     }
 
@@ -106,7 +106,7 @@ public class RequestForACardTest {
         driver.findElement(By.cssSelector("button.button")).click();
         var actualElement = driver.findElement(By.cssSelector("[data-test-id=phone].input_invalid .input__sub"));
         var actualText = actualElement.getText().trim();
-        assertEquals("Данное поле не может быть пустым", actualText);
+        assertEquals("Поле обязательно для заполнения", actualText);
         assertTrue(actualElement.isDisplayed());
     }
 
