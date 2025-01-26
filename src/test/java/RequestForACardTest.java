@@ -111,7 +111,7 @@ public class RequestForACardTest {
     }
 
     @Test
-    void WithoutCheckbox () {
+    void withoutCheckbox () {
         driver.get("http://localhost:9999");
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Сергей Сидоров");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79035714531");
